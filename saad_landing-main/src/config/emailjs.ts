@@ -1,10 +1,10 @@
 // EmailJS Configuration
 // Replace these with your actual EmailJS credentials
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: 'YOUR_SERVICE_ID', // e.g., 'service_abc123'
-  TEMPLATE_ID_OWNER: 'YOUR_TEMPLATE_ID_OWNER', // Template for SAAD team notification
-  TEMPLATE_ID_SENDER: 'YOUR_TEMPLATE_ID_SENDER', // Template for sender confirmation
-  PUBLIC_KEY: 'YOUR_PUBLIC_KEY', // e.g., 'user_abc123xyz'
+  SERVICE_ID: 'service_82it4fn', // e.g., 'service_abc123'
+  TEMPLATE_ID_OWNER: 'Ytemplate_welcome_user', // Template for SAAD team notification
+  TEMPLATE_ID_SENDER: 'template_welcome_user', // Template for sender confirmation
+  PUBLIC_KEY: 'service_82it4fn', // e.g., 'user_abc123xyz'
 };
 
 // Template parameter mapping for owner notification

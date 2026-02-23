@@ -250,7 +250,7 @@ export default function Contact() {
                   disabled={status === 'sending'}
                   whileHover={status !== 'sending' ? { scale: 1.02, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)' } : {}}
                   whileTap={status !== 'sending' ? { scale: 0.98 } : {}}
-                  className={`w-full bg-gradient-to-r from-pure-black to-soft-black text-white font-semibold py-4 rounded-lg flex items-center justify-center space-x-2 shadow-lg transition-all ${
+                  className={`w-full bg-gradient-to-r from-pure-black to-soft-black text-black font-semibold py-4 rounded-lg flex items-center justify-center space-x-2 shadow-lg transition-all ${
                     status === 'sending' ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'
                   }`}
                 >
