@@ -94,7 +94,7 @@ export default function About() {
               className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
             >
               <div className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${feature.gradient} mb-6`}>
-                <feature.icon className="w-8 h-8 text-white" />
+                <feature.icon className="w-8 h-8 text-black" />
               </div>
               <h3 className="text-2xl font-bold text-black mb-4">{feature.title}</h3>
               <p className="text-black leading-relaxed">{feature.description}</p>
@@ -107,7 +107,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 bg-gradient-to-r from-pure-black to-soft-black rounded-2xl p-12 text-center text-w shadow-2xl"
+          className="mt-16 bg-gradient-to-r from-pure-black to-soft-black rounded-2xl p-12 text-center text-black shadow-2xl"
         >
           <h3 className="text-3xl font-bold mb-4">Our Philosophy</h3>
           <p className="text-xl leading-relaxed max-w-3xl mx-auto opacity-95">

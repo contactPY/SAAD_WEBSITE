@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Users, Trophy, Sparkles, Search } from 'lucide-react';
+import { Calendar, MapPin, Users, Trophy, Sparkles, Search, Linkedin } from 'lucide-react';
 
 export default function Events() {
   const eventCardVariants = {
@@ -30,6 +30,7 @@ export default function Events() {
       icon: Sparkles,
       gradient: 'from-pure-black to-soft-black',
       image: 'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800',
+      linkedin: 'https://www.linkedin.com/posts/saad-nmiet_departmentofaiandds-nmiet-saad-activity-7385202525806714880-V4_y',
     },
     {
       title: 'AI & Data Science Webinar',
@@ -41,6 +42,7 @@ export default function Events() {
       icon: Users,
       gradient: 'from-soft-black to-medium-gray',
       image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
+      linkedin: 'https://www.linkedin.com/posts/saad-nmiet_saad-nmiet-aianddatascience-activity-7385205342110064640-Ftz0',
     },
     {
       title: 'AVISHKAR - Research Poster Competition',
@@ -50,6 +52,7 @@ export default function Events() {
       icon: Trophy,
       gradient: 'from-medium-gray to-soft-black',
       image: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800',
+      linkedin: 'https://www.linkedin.com/posts/saad-nmiet_departmentofaiandds-nmiet-saad-activity-7385210207762579457-44mB',
     },
     {
       title: 'Searchathon: Diwali Edition',
@@ -60,6 +63,7 @@ export default function Events() {
       icon: Search,
       gradient: 'from-soft-black to-pure-black',
       image: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=800',
+      linkedin: 'https://www.linkedin.com/posts/saad-nmiet_departmentofaiandds-saad-nmiet-activity-7385210490395881472-Rh0K',
     },
   ];
 
@@ -147,6 +151,20 @@ export default function Events() {
                 </div>
 
                 <p className="text-black leading-relaxed">{event.description}</p>
+
+                {event.linkedin && (
+                  <motion.a
+                    href={event.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05, x: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-flex items-center space-x-2 mt-4 text-pure-black font-semibold hover:text-soft-black transition-colors"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                    <span>View on LinkedIn</span>
+                  </motion.a>
+                )}
               </div>
             </motion.div>
           ))}
