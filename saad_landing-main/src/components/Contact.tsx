@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Instagram, Linkedin, CheckCircle, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
+import emailjs from 'emailjs-com';
+import { EMAILJS_CONFIG, getOwnerTemplateParams, getSenderTemplateParams } from '../config/emailjs';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -8,6 +10,9 @@ export default function Contact() {
     email: '',
     message: '',
   });
+
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
 
   const formVariants = {
     hidden: { opacity: 0, x: -50 },
@@ -22,9 +27,48 @@ export default function Contact() {
     },
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setStatus('sending');
+    setStatusMessage('');
+
+    try {
+      // Send notification email to SAAD team (owner)
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID_OWNER,
+        getOwnerTemplateParams(formData),
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      // Send confirmation email to sender
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID_SENDER,
+        getSenderTemplateParams(formData),
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      setStatus('success');
+      setStatusMessage('Message sent successfully! Check your email for confirmation.');
+      
+      // Reset form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+
+      // Reset status after 5 seconds
+      setTimeout(() => {
+        setStatus('idle');
+        setStatusMessage('');
+      }, 5000);
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setStatus('error');
+      setStatusMessage('Failed to send message. Please try again or contact us directly at saadnmiet@gmail.com');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -203,13 +247,51 @@ export default function Contact() {
 
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)' }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-r from-pure-black to-soft-black text-black font-semibold py-4 rounded-lg flex items-center justify-center space-x-2 shadow-lg"
+                  disabled={status === 'sending'}
+                  whileHover={status !== 'sending' ? { scale: 1.02, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)' } : {}}
+                  whileTap={status !== 'sending' ? { scale: 0.98 } : {}}
+                  className={`w-full bg-gradient-to-r from-pure-black to-soft-black text-white font-semibold py-4 rounded-lg flex items-center justify-center space-x-2 shadow-lg transition-all ${
+                    status === 'sending' ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'
+                  }`}
                 >
-                  <span>Send Message</span>
-                  <Send className="w-5 h-5" />
+                  {status === 'sending' ? (
+                    <>
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                        className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                      />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Send Message</span>
+                      <Send className="w-5 h-5" />
+                    </>
+                  )}
                 </motion.button>
+
+                {status === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center space-x-2 text-green-600 bg-green-50 p-3 rounded-lg"
+                  >
+                    <CheckCircle className="w-5 h-5" />
+                    <span>{statusMessage}</span>
+                  </motion.div>
+                )}
+
+                {status === 'error' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center space-x-2 text-red-600 bg-red-50 p-3 rounded-lg"
+                  >
+                    <AlertCircle className="w-5 h-5" />
+                    <span>{statusMessage}</span>
+                  </motion.div>
+                )}
               </form>
             </div>
 
