@@ -35,7 +35,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section id="contact" className="py-24 bg-gradient-to-b from-paper-white to-light-gray">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -44,8 +44,8 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Get In Touch</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Get In Touch</h2>
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Have questions, ideas, or a passion for Artificial Intelligence and Data Science? We
             would love to connect with you.
           </p>
@@ -58,7 +58,7 @@ export default function Contact() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl p-8 text-white shadow-2xl">
+            <div className="bg-gradient-to-br from-pure-black to-soft-black rounded-2xl p-8 text-black shadow-2xl">
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
 
               <div className="space-y-6 mb-8">
@@ -70,7 +70,7 @@ export default function Contact() {
                   <Mail className="w-6 h-6 flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-semibold mb-1">Email</div>
-                    <div className="text-blue-100">saadnmiet@gmail.com</div>
+                    <div className="text-black/80">saadnmiet@gmail.com</div>
                   </div>
                 </motion.a>
 
@@ -81,8 +81,8 @@ export default function Contact() {
                   <Phone className="w-6 h-6 flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-semibold mb-1">Phone</div>
-                    <div className="text-blue-100">+91 84215 72603</div>
-                    <div className="text-sm text-blue-200">Shrutika Patil (President)</div>
+                    <div className="text-black/80">+91 84215 72603</div>
+                    <div className="text-sm text-black/60">Shrutika Patil (President)</div>
                   </div>
                 </motion.div>
 
@@ -93,14 +93,14 @@ export default function Contact() {
                   <MapPin className="w-6 h-6 flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-semibold mb-1">Location</div>
-                    <div className="text-blue-100 text-sm leading-relaxed">
+                    <div className="text-black/80 text-sm leading-relaxed">
                       PCET's & NMVPM's Nutan Maharashtra Institute of Engineering and Technology
                     </div>
                   </div>
                 </motion.div>
               </div>
 
-              <div className="pt-6 border-t border-white/20">
+              <div className="pt-6 border-t border-black/20">
                 <h4 className="font-semibold mb-4">Connect on Social Media</h4>
                 <div className="flex space-x-4">
                   <motion.a
@@ -135,18 +135,18 @@ export default function Contact() {
             transition={{ type: 'spring', stiffness: 80, damping: 20 }}
           >
             <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+              <h3 className="text-2xl font-bold text-black mb-6">Send Us a Message</h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-black mb-2">
                     Your Name
                   </label>
                   <motion.input
                     whileFocus={{
                       scale: 1.02,
-                      borderColor: '#2563EB',
-                      boxShadow: '0 0 0 3px rgba(37, 99, 235, 0.1)',
+                      borderColor: '#1a1a1a',
+                      boxShadow: '0 0 0 3px rgba(26, 26, 26, 0.1)',
                     }}
                     type="text"
                     id="name"
@@ -160,14 +160,14 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
                     Email Address
                   </label>
                   <motion.input
                     whileFocus={{
                       scale: 1.02,
-                      borderColor: '#2563EB',
-                      boxShadow: '0 0 0 3px rgba(37, 99, 235, 0.1)',
+                      borderColor: '#1a1a1a',
+                      boxShadow: '0 0 0 3px rgba(26, 26, 26, 0.1)',
                     }}
                     type="email"
                     id="email"
@@ -181,14 +181,14 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-black mb-2">
                     Message
                   </label>
                   <motion.textarea
                     whileFocus={{
                       scale: 1.02,
-                      borderColor: '#2563EB',
-                      boxShadow: '0 0 0 3px rgba(37, 99, 235, 0.1)',
+                      borderColor: '#1a1a1a',
+                      boxShadow: '0 0 0 3px rgba(26, 26, 26, 0.1)',
                     }}
                     id="message"
                     name="message"
@@ -203,9 +203,9 @@ export default function Contact() {
 
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02, boxShadow: '0 10px 30px rgba(37, 99, 235, 0.3)' }}
+                  whileHover={{ scale: 1.02, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)' }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold py-4 rounded-lg flex items-center justify-center space-x-2 shadow-lg"
+                  className="w-full bg-gradient-to-r from-pure-black to-soft-black text-black font-semibold py-4 rounded-lg flex items-center justify-center space-x-2 shadow-lg"
                 >
                   <span>Send Message</span>
                   <Send className="w-5 h-5" />
@@ -218,10 +218,10 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6"
+              className="mt-8 bg-white border border-light-gray rounded-xl p-6"
             >
-              <p className="text-gray-700 leading-relaxed">
-                <span className="font-semibold text-blue-700">Join us!</span> Whether you're
+              <p className="text-black leading-relaxed">
+                <span className="font-semibold text-black">Join us!</span> Whether you're
                 interested in joining the association, collaborating on projects, or participating
                 in upcoming events, SAAD welcomes enthusiastic and driven students.
               </p>

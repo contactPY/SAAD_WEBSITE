@@ -18,27 +18,27 @@ const philosophyCards: PhilosophyCard[] = [
     title: "Innovation First",
     description: "We push boundaries and explore cutting-edge technologies to solve real-world problems. Our community thrives on creativity and forward-thinking approaches to AI and Data Science challenges.",
     icon: <Lightbulb className="w-16 h-16" />,
-    gradient: "from-blue-600 via-blue-700 to-blue-800",
-    borderColor: "border-blue-300",
-    textColor: "text-blue-100"
+    gradient: "from-pure-black via-soft-black to-medium-gray",
+    borderColor: "border-light-gray",
+    textColor: "text-medium-gray"
   },
   {
     id: 2,
     title: "Excellence Driven",
     description: "We maintain high standards in technical skills, research, and professional development. Our members are committed to achieving outstanding results and pushing the envelope of what's possible.",
     icon: <Target className="w-16 h-16" />,
-    gradient: "from-purple-600 via-purple-700 to-purple-800",
-    borderColor: "border-purple-300",
-    textColor: "text-purple-100"
+    gradient: "from-soft-black via-medium-gray to-pure-black",
+    borderColor: "border-light-gray",
+    textColor: "text-medium-gray"
   },
   {
     id: 3,
     title: "Growth Mindset",
     description: "We embrace challenges and continuously evolve our skills and knowledge together. Learning is a journey, and we support each other in reaching new heights in AI and Data Science expertise.",
     icon: <Rocket className="w-16 h-16" />,
-    gradient: "from-green-600 via-green-700 to-green-800",
-    borderColor: "border-green-300",
-    textColor: "text-green-100"
+    gradient: "from-medium-gray via-soft-black to-pure-black",
+    borderColor: "border-light-gray",
+    textColor: "text-medium-gray"
   }
 ];
 
@@ -93,12 +93,12 @@ export default function PhilosophyCarousel() {
         >
           <div className="relative">
             <motion.div
-              className="w-20 h-20 border-4 border-blue-500 border-t-transparent rounded-full"
+              className="w-20 h-20 border-4 border-pure-black border-t-transparent rounded-full"
               animate={{ rotate: 360 }}
               transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
             />
             <motion.div
-              className="absolute inset-0 w-20 h-20 border-4 border-purple-500 border-b-transparent rounded-full"
+              className="absolute inset-0 w-20 h-20 border-4 border-soft-black border-b-transparent rounded-full"
               animate={{ rotate: -360 }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
             />
@@ -117,13 +117,13 @@ export default function PhilosophyCarousel() {
   }
 
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
+    <div className="min-h-screen bg-paper-white relative overflow-hidden">
       {/* Background animated elements */}
       <div className="absolute inset-0">
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-blue-500 rounded-full opacity-10"
+            className="absolute w-2 h-2 bg-pure-black rounded-full opacity-10"
             initial={{
               x: Math.random() * window.innerWidth,
               y: Math.random() * window.innerHeight,
@@ -149,10 +149,10 @@ export default function PhilosophyCarousel() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-6xl font-bold text-black mb-4">
             Our Philosophy
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             The core values that drive our community and shape our approach to AI and Data Science
           </p>
         </motion.div>
@@ -180,7 +180,7 @@ export default function PhilosophyCarousel() {
                     duration: 0.6,
                     ease: "backOut"
                   }}
-                  className="text-white mb-8"
+                  className="text-black mb-8"
                 >
                   {currentCard.icon}
                 </motion.div>
@@ -189,7 +189,7 @@ export default function PhilosophyCarousel() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-3xl md:text-5xl font-bold text-white mb-6"
+                  className="text-3xl md:text-5xl font-bold text-black mb-6"
                 >
                   {currentCard.title}
                 </motion.h3>
@@ -214,7 +214,7 @@ export default function PhilosophyCarousel() {
             onClick={goToPrevious}
             className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 bg-gray-100/80 backdrop-blur-sm border border-gray-300 rounded-full p-3 hover:bg-gray-200/80 transition-colors z-20"
           >
-            <ChevronLeft className="w-6 h-6 text-gray-700" />
+            <ChevronLeft className="w-6 h-6 text-black" />
           </motion.button>
 
           <motion.button
@@ -224,7 +224,7 @@ export default function PhilosophyCarousel() {
             onClick={goToNext}
             className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 bg-gray-100/80 backdrop-blur-sm border border-gray-300 rounded-full p-3 hover:bg-gray-200/80 transition-colors z-20"
           >
-            <ChevronRight className="w-6 h-6 text-gray-700" />
+            <ChevronRight className="w-6 h-6 text-black" />
           </motion.button>
         </div>
 
@@ -241,8 +241,8 @@ export default function PhilosophyCarousel() {
               onClick={() => goToSlide(index)}
               className={`transition-all duration-300 rounded-full ${
                 index === currentIndex
-                  ? 'w-12 h-3 bg-gray-800'
-                  : 'w-3 h-3 bg-gray-400 hover:bg-gray-600'
+                  ? 'w-12 h-3 bg-black'
+                  : 'w-3 h-3 bg-black/40 hover:bg-black/60'
               }`}
             />
           ))}
@@ -254,7 +254,7 @@ export default function PhilosophyCarousel() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
           onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-          className="mt-8 px-6 py-2 bg-gray-100/80 backdrop-blur-sm border border-gray-300 rounded-full text-gray-700 hover:bg-gray-200/80 transition-colors"
+          className="mt-8 px-6 py-2 bg-gray-100/80 backdrop-blur-sm border border-gray-300 rounded-full text-black hover:bg-gray-200/80 transition-colors"
         >
           {isAutoPlaying ? 'Pause' : 'Play'} Auto-play
         </motion.button>

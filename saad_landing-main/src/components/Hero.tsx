@@ -52,7 +52,7 @@ export default function Hero() {
         </div>
       </section>
 
-      <section className="py-20 bg-light-gray">
+      <section className="py-20 bg-paper-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={heroVariants}

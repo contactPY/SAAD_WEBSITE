@@ -33,33 +33,33 @@ export default function About() {
       title: 'Learning by Doing',
       description:
         'Hands-on workshops, hackathons, and real-world projects that transform theory into practical skills.',
-      gradient: 'from-blue-500 to-cyan-500',
+      gradient: 'from-pure-black to-soft-black',
     },
     {
       icon: TrendingUp,
       title: 'Industry Bridge',
       description:
         'Connecting classroom theory with practical industry experience through mentorship and collaboration.',
-      gradient: 'from-green-500 to-emerald-500',
+      gradient: 'from-soft-black to-medium-gray',
     },
     {
       icon: Lightbulb,
       title: 'Innovation Hub',
       description:
         'Transforming creative ideas into impactful solutions through cutting-edge AI and Data Science technologies.',
-      gradient: 'from-orange-500 to-yellow-500',
+      gradient: 'from-medium-gray to-soft-black',
     },
     {
       icon: Users,
       title: 'Community Building',
       description:
         'Fostering collaboration, peer learning, and a supportive network of AI/DS enthusiasts.',
-      gradient: 'from-pink-500 to-rose-500',
+      gradient: 'from-soft-black to-pure-black',
     },
   ];
 
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section id="about" className="py-24 bg-gradient-to-b from-paper-white to-light-gray">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -68,10 +68,10 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
             About SAAD
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             SAAD is more than just a student organization - it's a community of curious minds
             passionate about exploring AI and Data Science. We bridge the gap between classroom
             learning and real industry experience.
@@ -96,8 +96,8 @@ export default function About() {
               <div className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${feature.gradient} mb-6`}>
                 <feature.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              <h3 className="text-2xl font-bold text-black mb-4">{feature.title}</h3>
+              <p className="text-black leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -107,7 +107,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-12 text-center text-white shadow-2xl"
+          className="mt-16 bg-gradient-to-r from-pure-black to-soft-black rounded-2xl p-12 text-center text-w shadow-2xl"
         >
           <h3 className="text-3xl font-bold mb-4">Our Philosophy</h3>
           <p className="text-xl leading-relaxed max-w-3xl mx-auto opacity-95">

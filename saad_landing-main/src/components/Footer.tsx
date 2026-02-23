@@ -12,7 +12,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <div className="flex items-center space-x-2 mb-4">
-              <Sparkles className="w-8 h-8 text-blue-400" />
+              <Sparkles className="w-8 h-8 text-white" />
               <span className="text-xl font-bold">SAAD NMIET</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -33,7 +33,7 @@ export default function Footer() {
             <div className="space-y-3">
               <a
                 href="mailto:saadnmiet@gmail.com"
-                className="flex items-start space-x-2 text-gray-400 hover:text-blue-400 transition-colors"
+                className="flex items-start space-x-2 text-gray-400 hover:text-white transition-colors"
               >
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
                 <span className="text-sm">saadnmiet@gmail.com</span>
@@ -63,7 +63,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-lg hover:shadow-lg transition-shadow"
+                className="bg-gradient-to-r from-pure-black to-soft-black p-3 rounded-lg hover:shadow-lg transition-shadow"
               >
                 <Instagram className="w-6 h-6" />
               </motion.a>
@@ -73,7 +73,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-blue-600 p-3 rounded-lg hover:shadow-lg transition-shadow"
+                className="bg-pure-black p-3 rounded-lg hover:shadow-lg transition-shadow"
               >
                 <Linkedin className="w-6 h-6" />
               </motion.a>

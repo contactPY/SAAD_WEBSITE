@@ -28,7 +28,7 @@ export default function Team() {
     hover: {
       y: -15,
       rotateX: 5,
-      boxShadow: '0 20px 40px rgba(37, 99, 235, 0.2)',
+      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2)',
       transition: { duration: 0.3 },
     },
   };
@@ -81,18 +81,18 @@ export default function Team() {
       <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${gradient} flex items-center justify-center mb-4`}>
         <User className="w-8 h-8 text-white" />
       </div>
-      <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
+      <h3 className="text-xl font-bold text-black mb-2">{member.name}</h3>
       <motion.div
         whileHover={{ scale: 1.05 }}
-        className="inline-block px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-3"
+        className="inline-block px-3 py-1 bg-light-gray text-black rounded-full text-sm font-medium mb-3"
       >
         {member.role}
       </motion.div>
       {member.department && (
-        <p className="text-gray-600 text-sm mb-2">{member.department}</p>
+        <p className="text-black text-sm mb-2">{member.department}</p>
       )}
       {member.phone && (
-        <div className="flex items-center space-x-2 text-gray-600 text-sm mt-3">
+        <div className="flex items-center space-x-2 text-black text-sm mt-3">
           <Phone className="w-4 h-4" />
           <span>{member.phone}</span>
         </div>
@@ -110,8 +110,8 @@ export default function Team() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Meet Our Team</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Meet Our Team</h2>
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Dedicated individuals driving innovation and excellence in AI & Data Science
           </p>
         </motion.div>
@@ -121,9 +121,9 @@ export default function Team() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-gray-900 mb-8 flex items-center"
+            className="text-3xl font-bold text-black mb-8 flex items-center"
           >
-            <div className="w-2 h-8 bg-gradient-to-b from-blue-600 to-cyan-600 rounded-full mr-4"></div>
+            <div className="w-2 h-8 bg-gradient-to-b from-pure-black to-soft-black rounded-full mr-4"></div>
             Faculty Coordinators
           </motion.h3>
           <motion.div
@@ -134,7 +134,7 @@ export default function Team() {
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
             {faculty.map((member) => (
-              <MemberCard key={member.name} member={member} gradient="from-purple-500 to-indigo-500" />
+              <MemberCard key={member.name} member={member} gradient="from-pure-black to-soft-black" />
             ))}
           </motion.div>
         </div>
@@ -144,9 +144,9 @@ export default function Team() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-gray-900 mb-8 flex items-center"
+            className="text-3xl font-bold text-black mb-8 flex items-center"
           >
-            <div className="w-2 h-8 bg-gradient-to-b from-blue-600 to-cyan-600 rounded-full mr-4"></div>
+            <div className="w-2 h-8 bg-gradient-to-b from-pure-black to-soft-black rounded-full mr-4"></div>
             Core Committee
           </motion.h3>
           <motion.div
@@ -157,7 +157,7 @@ export default function Team() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {coreTeam.map((member) => (
-              <MemberCard key={member.name} member={member} gradient="from-blue-500 to-cyan-500" />
+              <MemberCard key={member.name} member={member} gradient="from-soft-black to-medium-gray" />
             ))}
           </motion.div>
         </div>
@@ -167,9 +167,9 @@ export default function Team() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-gray-900 mb-8 flex items-center"
+            className="text-3xl font-bold text-black mb-8 flex items-center"
           >
-            <div className="w-2 h-8 bg-gradient-to-b from-blue-600 to-cyan-600 rounded-full mr-4"></div>
+            <div className="w-2 h-8 bg-gradient-to-b from-pure-black to-soft-black rounded-full mr-4"></div>
             Technical & Operational Teams
           </motion.h3>
           <motion.div
@@ -180,7 +180,7 @@ export default function Team() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
           >
             {technicalTeams.map((member) => (
-              <MemberCard key={member.name} member={member} gradient="from-green-500 to-emerald-500" />
+              <MemberCard key={member.name} member={member} gradient="from-medium-gray to-soft-black" />
             ))}
           </motion.div>
         </div>
